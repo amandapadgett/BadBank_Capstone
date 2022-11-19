@@ -18,7 +18,7 @@ function create(name, email, password) {
         collection.insertOne(doc, {w:1}, function(err, result) {
             err ? reject(err) : resolve(doc);
         });
-    })
+    });
 }
 
 // find user account
@@ -29,8 +29,8 @@ function find(email){
             .find({ email: email })
             .toArray(function(err, docs) {
                 err ? reject(err) : resolve(docs);
-        });    
-    })
+        });   
+    });
 }
 
 

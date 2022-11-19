@@ -61,15 +61,14 @@ function LoginForm(props){
   const [show, setShow] = React.useState(true);
   const [user, setUser] = React.useState('');
   const [update, setUpdate] = React.useState('');
- 
   const ctx = React.useContext(UserContext);
-  // const [name, setName] = React.useState('');
-  console.log('start of login form username:', user);
+  
+  // console.log('start of login form context:', ctx);
 
   function handleEmailLogin(){
     let user = ctx.user;
-    console.log('login area username: ', ctx);
-    // user.name = ctx.user.name;
+    console.log('handlelogin area username: ', ctx);
+  
 
     const auth = firebase.auth();
     const promise = auth.signInWithEmailAndPassword(email, password);

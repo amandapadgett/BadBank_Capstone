@@ -5,7 +5,7 @@ var dal = require('./dal.js');
 
 require('dotenv').config();
 
-console.log(process.env)
+console.log('this is the process.env:', process.env);
 
 
 app.use(express.static('public'));

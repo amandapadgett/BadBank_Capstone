@@ -39,25 +39,24 @@ function CreateAccount() {
             return;
         }
 
-        // const auth = firebase.auth();
-        //   const promise = auth.createUserWithEmailAndPassword(email, password);
-        //   promise.catch(e => {
-        //     e.message ? setShow(true) : setShow(false)
-        //     setStatus(e.message)
-        //     console.log(e.message)})
-        // const auth = getAuth();
-
         const auth = firebase.auth();
-        const promise = auth.createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                //signed in
-                let user = userCredential.user;
-                console.log(`after firebase creation: ${user}`);
-            })
-            promise
-            .catch((error) => {
-                console.log(JSON.parse(error));
-            })
+          const promise = auth.createUserWithEmailAndPassword(email, password);
+          promise.catch(e => {
+            e.message ? setShow(true) : setShow(false)
+            setStatus(e.message)
+            console.log(e.message)});
+       
+        // const auth = firebase.auth();
+        // const promise = auth.createUserWithEmailAndPassword(email, password)
+        //     .then((userCredential) => {
+        //         //signed in
+        //         let user = userCredential.user;
+        //         console.log(`after firebase creation: ${user}`);
+        //     })
+        //     promise
+        //     .catch((error) => {
+        //         console.log(JSON.parse(error));
+        //     })
 
         const url = `/account/create/${name}/${email}/${password}`;
         (async () => {
@@ -71,7 +70,7 @@ function CreateAccount() {
             console.log('users name:',name);
             setShow(false);
             setStatus('');
-            })();      
+        })();      
         // setShow(false);
         // setStatus('')
     }
