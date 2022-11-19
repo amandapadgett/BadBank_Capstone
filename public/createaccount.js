@@ -70,6 +70,7 @@ function CreateAccount() {
             console.log('this is the ctx:', ctx);
             console.log('users name:',name);
             setShow(false);
+            setStatus('');
             })();      
         // setShow(false);
         // setStatus('')

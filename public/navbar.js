@@ -60,9 +60,7 @@ function NavBar(props){
         <ul className="navbar-nav">
        
           <li className="nav-item">
-              <a  href='/' className="nav-link" 
-              aria-current="page"
-              > Home </a>
+              <a  href='/' className="nav-link" aria-current="page"> Home </a>
               <span>Return Home</span>
           </li>
           <li className="nav-item">
