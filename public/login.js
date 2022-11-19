@@ -14,7 +14,7 @@ function Login(props){
        body={show 
       ? 
        ( <LoginForm 
-          user={props.user}
+          // user={props.user}
           setShow={setShow} 
           setStatus={setStatus}/> 
         ) : (
@@ -31,7 +31,7 @@ function LoginMsg(props){
   const ctx = React.useContext(UserContext);
   let user = ctx.user;
      
-   console.log('trying to find users name:', ctx.name);
+  //  console.log('trying to find users name:', ctx.user);
 
   return(<>
     <h5>Welcome back,</h5>
@@ -64,7 +64,7 @@ function LoginForm(props){
  
   const ctx = React.useContext(UserContext);
   // const [name, setName] = React.useState('');
-  console.log('username:', user);
+  console.log('start of login form username:', user);
 
   function handleEmailLogin(){
     let user = ctx.user;
