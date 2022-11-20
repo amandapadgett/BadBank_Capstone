@@ -136,7 +136,13 @@ function CreateAccount() {
             className="btn btn-light" 
             onClick={clearForm}
             disabled={name === "" && email === "" && password === ""}
-            >Add another account</button>
+            >Add Another Account</button> <br />
+            <br />
+            <button 
+            type="submit" 
+            className="btn btn-light" >
+            <a href="#/login/">Login into Your Account</a>
+            </button> 
             
             </> )
             }

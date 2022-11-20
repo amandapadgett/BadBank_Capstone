@@ -1,8 +1,7 @@
 function Login(props){
   const [show, setShow]     = React.useState(true);
   const [status, setStatus] = React.useState('');  
-  const [name, setName] = React.useState(''); 
-
+ 
   const ctx = React.useContext(UserContext);
   let user = ctx.user;
 
