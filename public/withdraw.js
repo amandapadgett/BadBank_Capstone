@@ -51,12 +51,12 @@ function WithdrawMsg(props) {
 
 function WithdrawForm(props) {
   const [amount, setAmount] = React.useState('');
-  const [email, setEmail] = React.useState('');
+  // const [email, setEmail] = React.useState('');
   const [status, setStatus] = React.useState('');
   const [update, setUpdate] = React.useState('');
-  const [name, setName] = React.useState('');
+  // const [name, setName] = React.useState('');
   const [show, setShow] = React.useState(true);
-  const [balance, setBalance] = React.useState('');
+  // const [balance, setBalance] = React.useState('');
   const ctx = React.useContext(UserContext);
    
   
@@ -68,9 +68,6 @@ function WithdrawForm(props) {
     console.log('this is the user:', user);
     console.log('this is user balance:', ctx.balance);
     
-    //I did it!!! yay!
-    //not now. of course I broke something and hadn't saved to Git
-
     if(ctx.balance > amount) {
         ctx.balance = Number(ctx.balance) - Number(amount);
         setUpdate(false);
@@ -108,16 +105,7 @@ function WithdrawForm(props) {
 
 return (
   <>
-  {/* User <br/>
-  <input 
-      type="input"
-      className="form-control"
-      placeholder="Enter account email"
-      value={email}
-      onChange={e => setEmail(e.currentTarget.value)} /> 
-      <br /> */}
-
-
+ 
   Amount <br />
   <input
       type='number'

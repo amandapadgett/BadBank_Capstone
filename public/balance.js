@@ -1,9 +1,6 @@
 function Balance(props) {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');
-  // const [email, setEmail] = React.useState('');
-  // const [balance, setBalance] = React.useState('');
-
   const ctx = React.useContext(UserContext);
   let user = ctx.user;
   console.log('user and balance:', user, ctx.balance);
@@ -17,10 +14,8 @@ function Balance(props) {
         show ? (
           <>
             <BalanceForm
-              // user={props.user}
               setShow={setShow}
               setStatus={setStatus}
-              // setBalance={setBalance}
             />
           </>
         ) : (
@@ -76,14 +71,13 @@ function BalanceForm(props) {
       .then((text) => {
         try {
           const data = JSON.parse(text);
-          props.setStatus(JSON.stringify(data));
-          ctx.user = data.name;
-          ctx.email = data.email;
-          ctx.balance = data.balance;
-          props.setStatus(JSON.stringify(data.balance));
+          // props.setStatus(JSON.stringify(data));
+          // ctx.user = data.name;
+          // ctx.email = data.email;
+          // ctx.balance = data.balance;
+          // props.setStatus(JSON.stringify(data.balance));
           props.setShow(false);
          
-          console.log('this is the bottom user:', user);
         } catch (err) {
           props.setStatus(text);
           console.log('the freaking err: ', text);
@@ -93,7 +87,7 @@ function BalanceForm(props) {
 
   return (
     <>
-      Email
+     <h6>Please log in via the Login page before checking your balance.</h6>
       <br />
       <input
         type='input'

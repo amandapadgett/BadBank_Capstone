@@ -3,7 +3,8 @@ function Login(props){
   const [status, setStatus] = React.useState('');  
  
   const ctx = React.useContext(UserContext);
-  let user = ctx.user;
+  let user = ctx;
+  console.log('login user ctx:', user);
 
   return (
     <Card
@@ -13,12 +14,10 @@ function Login(props){
        body={show 
       ? 
        ( <LoginForm 
-          // user={props.user}
           setShow={setShow} 
           setStatus={setStatus}/> 
         ) : (
         <LoginMsg 
-        //  user={props.user} //trying
           setShow={setShow} 
           setStatus={setStatus}/> )
     }
@@ -30,11 +29,11 @@ function LoginMsg(props){
   const ctx = React.useContext(UserContext);
   let user = ctx.user;
      
-  //  console.log('trying to find users name:', ctx.user);
+   console.log('trying to find users name:', user);
 
   return(<>
     <h5>Welcome back,</h5>
-    <h5> {ctx.user}!</h5>
+    <h5> {user}!</h5>
     <h6>You are successfully logged in.</h6>
     <h6>Your balance is ${ctx.balance}</h6> <br />
    
@@ -60,14 +59,13 @@ function LoginForm(props){
   const [show, setShow] = React.useState(true);
   const [user, setUser] = React.useState('');
   const [update, setUpdate] = React.useState('');
+
   const ctx = React.useContext(UserContext);
   
   // console.log('start of login form context:', ctx);
 
   function handleEmailLogin(){
     let user = ctx.user;
-    console.log('handlelogin area username: ', ctx);
-  
 
     const auth = firebase.auth();
     const promise = auth.signInWithEmailAndPassword(email, password);
@@ -94,7 +92,7 @@ function LoginForm(props){
           }) 
           promise.catch(e => console.log('promise message:',e.message));
           } 
-          //   else  {
+          //       else  {
           
           //   alert('email or password was incorrect');
           //   setTimeout(() => setStatus(''), 2000);

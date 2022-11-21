@@ -1,7 +1,6 @@
 function Deposit(props) {
     const [show, setShow] = React.useState(true);
     const [status, setStatus]  = React.useState('');
-    const [amount, setAmount] = React.useState('');
     const ctx = React.useContext(UserContext);
     let user = ctx.user;
 
@@ -16,10 +15,8 @@ function Deposit(props) {
         body={show ? 
             (<>
             <DepositForm 
-                // user={props.user}
                 setShow={setShow}
                 setStatus={setStatus}
-                // setAmount={setAmount} 
                 />
                 
                 </> ) : (
@@ -54,14 +51,9 @@ function DepositMsg(props) {
 
 function DepositForm(props) {
     const [amount, setAmount] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [status, setStatus] = React.useState('');
     const ctx = React.useContext(UserContext);
-    const [name, setName] = React.useState('');
-   
 
     function handleDeposit() {
-      
         let user = ctx.user;
         // user.balance = Number(user.balance) + Number(amount);
              
@@ -95,18 +87,7 @@ function DepositForm(props) {
 
 return (
     <>
-    {/* <h6>Please log into your account via the Login page before making a deposit.</h6> <br />
-        
-    User Email <br/>
-    <input 
-        type="input"
-        className="form-control"
-        placeholder="Enter account email"
-        value={email}
-        onChange={e => setEmail(e.currentTarget.value)} /> 
-        <br /> */}
-
-
+   
     Amount <br />
     <input
         type='number'
