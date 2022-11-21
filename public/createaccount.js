@@ -47,6 +47,7 @@ function CreateAccount() {
             console.log(e.message)});
        
       
+
         const url = `/account/create/${name}/${email}/${password}`;
         (async () => {
             var res = await fetch(url, {method: 'POST', mode: 'cors'});
@@ -139,7 +140,3 @@ function CreateAccount() {
         />
         ) 
 }
-
-
-
-
